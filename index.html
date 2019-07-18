@@ -45,17 +45,15 @@
     <!--
 
     <div id="floating-panel">
-      <button onclick="toggleHeatmap()">Toggle Heatmap</button>
+      <button onclick="toggleHeatmap()">Toggle Heatmap</button> 
       <button onclick="changeGradient()">Change gradient</button>
       <button onclick="changeRadius()">Change radius</button>
       <button onclick="changeOpacity()">Change opacity</button>
     </div>
 
-  -->
+    -->
 
     <div id="map"></div>
-
-    
 
     <script>
 
@@ -64,6 +62,23 @@
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
 
       var map, heatmap, region1, region2, marker;
+      var gradient_inv = [
+          'rgba(0, 255, 255, 0)',
+          'rgba(0, 255, 255, 1)',
+          'rgba(0, 191, 255, 1)',
+          'rgba(0, 127, 255, 1)',
+          'rgba(0, 63, 255, 1)',
+          'rgba(0, 0, 255, 1)',
+          'rgba(0, 0, 223, 1)',
+          'rgba(0, 0, 191, 1)',
+          'rgba(0, 0, 159, 1)',
+          'rgba(0, 0, 127, 1)',
+          'rgba(63, 0, 91, 1)',
+          'rgba(127, 0, 63, 1)',
+          'rgba(191, 0, 31, 1)',
+          'rgba(255, 0, 0, 1)'
+        ];
+
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -103,6 +118,7 @@
         heatmap = new google.maps.visualization.HeatmapLayer({
           data: getPoints(),
           map: map
+          //gradient: gradient_inv
         });
       }
 
@@ -129,6 +145,7 @@
         ]
         heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
       }
+
 
       function changeRadius() {
         heatmap.set('radius', heatmap.get('radius') ? null : 20);
@@ -376,9 +393,12 @@
           new google.maps.LatLng(42.4667249, -76.486376)
         ];
       }
+      
     </script>
+
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkIis1Plmil4G13Vy_ComEFuwZ5vc8AQg&libraries=visualization&callback=initMap">
    </script>
+   
   </body>
 </html>
