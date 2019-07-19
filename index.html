@@ -41,15 +41,13 @@
   </head>
 
   <body>
-
-
+    
     <div id="floating-panel">
       <button onclick="toggleHeatmap()">Toggle Heatmap</button> 
       <button onclick="changeGradient()">Change gradient</button>
       <button onclick="changeRadius()">Change radius</button>
       <button onclick="changeOpacity()">Change opacity</button>
     </div>
-
     
     <div id="map"></div>
 
@@ -156,6 +154,7 @@
       // Heatmap data: 500 Points
       function getPoints() {
         return [
+      
           new google.maps.LatLng(42.2098712, -76.4928894),
           new google.maps.LatLng(42.4472356, -76.5048342),
           new google.maps.LatLng(42.4722868, -76.5397739),
@@ -388,7 +387,17 @@
           new google.maps.LatLng(42.4199351, -76.4969643),
           new google.maps.LatLng(42.4458918, -76.4833009),
           new google.maps.LatLng(42.4066927, -76.5788264),
-          new google.maps.LatLng(42.4667249, -76.486376)
+          new google.maps.LatLng(42.4667249, -76.486376),
+          new google.maps.LatLng(42.4153264, -76.5044542),
+          new google.maps.LatLng(42.485475, -76.4587489),
+          new google.maps.LatLng(42.4402117, -76.499304),
+          new google.maps.LatLng(42.4173999, -76.5225469),
+          new google.maps.LatLng(42.4455048, -76.4983956),
+          new google.maps.LatLng(42.4747304, -76.4572802),
+          new google.maps.LatLng(42.4762569, -76.45793),
+          new google.maps.LatLng(42.3868289, -76.4989377),
+          new google.maps.LatLng(42.4707854, -76.4812733),
+          new google.maps.LatLng(42.4370649, -76.4878921)
         ];
       }
       
